@@ -4,7 +4,12 @@ import android.net.Uri;
 
 public class ItemsContract {
 	public static final String CONTENT_AUTHORITY = "com.example.xyzreader";
-	public static final Uri BASE_URI = Uri.parse("content://com.example.xyzreader");
+	public static final Uri BASE_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+
+	/**
+	 * Possible path (appended to base content URI for possible URI's)
+	 */
+	public static final String PATH_ARTICLES = "articles";
 
 	interface ItemsColumns {
 		/** Type: INTEGER PRIMARY KEY AUTOINCREMENT */
@@ -37,6 +42,7 @@ public class ItemsContract {
 		public static Uri buildDirUri() {
 			return BASE_URI.buildUpon().appendPath("items").build();
 		}
+
 
 		/** Matches: /items/[_id]/ */
 		public static Uri buildItemUri(long _id) {

@@ -22,11 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.DetailActivity"
+            android:parentActivityName=".ui.ArticleListActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ui.ArticleListActivity" />
+        </activity>
 
         <activity
             android:name=".ui.ArticleDetailActivity"
             android:parentActivityName=".ui.ArticleListActivity">
-            <intent-filter>
+            <intent-filter android:scheme="http">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="vnd.android.cursor.item/vnd.com.example.xyzreader.items" />
@@ -42,6 +49,9 @@
         <provider android:name=".data.ItemsProvider"
             android:authorities="com.example.xyzreader"
             android:exported="false" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
     </application>
 

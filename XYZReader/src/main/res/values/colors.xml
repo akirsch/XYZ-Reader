@@ -23,4 +23,5 @@
     <color name="theme_accent">#00BCD4</color>
     <color name="color_activity_background">#F5F5F5</color>
     <color name="colorText">#616161</color>
+    <color name="color_background">#eeeeee</color>
 </resources>

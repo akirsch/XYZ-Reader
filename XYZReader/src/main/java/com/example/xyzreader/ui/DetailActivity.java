@@ -109,10 +109,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
 
         mCursor = cursor;
 
-        if (mCursor != null){
-            // Proceed with moving to the first row of the cursor and reading data from it
-            // (This should be the only row in the cursor)
-            mCursor.moveToFirst();
+        if (mCursor != null && mCursor.moveToFirst()){
 
             //set content of views to display data about chosen article
             toolbar.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
